@@ -80,8 +80,9 @@ exports.insertNewRow = async (req, res, next) => {
     console.log(req.body);
     const { roadName, roadType, height, link, bridgeCoordinates, imageBox, imageName, heightImplied } = req.body.entry;
 
-    // Convert bridgeCoordinates to a space-separated string if it's comma-separated
-    const formattedBridgeCoordinates = bridgeCoordinates.replace(',', ' ');
+    // Split the coordinates and reverse them
+    const coordsArray = bridgeCoordinates.split(',');
+    const formattedBridgeCoordinates = `${coordsArray[1]} ${coordsArray[0]}`; // latitude followed by longitude
 
     const query = `
         INSERT INTO bridge_data_queensland 
@@ -101,4 +102,5 @@ exports.insertNewRow = async (req, res, next) => {
         res.status(500).send('Error inserting data into the database');
     }
 };
+
 
