@@ -12,9 +12,25 @@ const DatabaseEntryForm = ({ onSubmit, formData }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Process the form data here
-    const formData = { roadName, roadType, height, link, bridgeCoordinates, imageBox, imageName, heightImplied };
-    onSubmit(formData);
+  
+    // Confirmation dialog
+    const userConfirmed = window.confirm('Are you sure you want to submit the form?');
+  
+    if (userConfirmed) {
+      // Process the form data here if user confirmed
+      const formData = { 
+        roadName, 
+        roadType, 
+        height, 
+        link, 
+        bridgeCoordinates, 
+        imageBox, 
+        imageName, 
+        heightImplied 
+      };
+      onSubmit(formData);
+    }
+    // If user didn't confirm, do nothing (form won't be submitted)
   };
 
   // Effect to update state when formData changes
