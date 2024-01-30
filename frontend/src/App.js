@@ -3,6 +3,7 @@ import ConnectionBox from './components/ConnectionBox/ConnectionBox';
 import Modal from './components/Modal/Modal';
 import CoordinatesInput from './components/CoordinatesInput/CoordinatesInput';
 import DatabaseEntryForm from './components/DatabaseEntryForm/DatabaseEntryForm';
+import './App.css'; // Adjust the path as needed
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false);

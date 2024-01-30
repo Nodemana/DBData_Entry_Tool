@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './DatabaseEntryForm.css';
 
 const DatabaseEntryForm = ({ onSubmit, formData }) => {
   const [roadName, setRoadName] = useState('');
@@ -48,7 +49,7 @@ const DatabaseEntryForm = ({ onSubmit, formData }) => {
   }, [formData]);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-container">
       <input type="text" value={roadName} onChange={(e) => setRoadName(e.target.value)} placeholder="Road Name" />
       <select value={roadType} onChange={(e) => setRoadType(e.target.value)}>
         <option value="">Select Road Type</option>

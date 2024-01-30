@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ConnectionBox.css';
 
 const ConnectionBox = ({ onConnect }) => {
   const [hostname, setHostname] = useState('192.168.1.186');
@@ -13,7 +14,7 @@ const ConnectionBox = ({ onConnect }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="connection-box">
       <input
         type="text"
         value={hostname}
