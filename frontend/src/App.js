@@ -11,7 +11,7 @@ const App = () => {
 
   const handleConnect = (connectionParams) => {
     console.log('Connecting with params:', connectionParams);
-    fetch('http://localhost:4000/DB/connect', {
+    fetch('http://localhost:4001/DB/connect', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ const App = () => {
 
   const handlePopulate = (coordinates) => {
     console.log('Sending coordinates:', coordinates);
-    fetch('http://localhost:4000/DB/populate', {
+    fetch('http://localhost:4001/DB/populate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const App = () => {
   const handleSubmit = (entry) => {
     // Here, you'll send the coordinates to the backend.
     console.log('Sending coordinates:', entry);
-    fetch('http://localhost:4000/DB/push', {
+    fetch('http://localhost:4001/DB/push', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
